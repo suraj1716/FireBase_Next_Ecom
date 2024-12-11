@@ -1,11 +1,10 @@
-// import AddToCartButton from "@/app/components/AddToCartButton";
-// import FavoriteButton from "@/app/components/FavoriteButton";
-// import MyRating from "@/app/components/MyRating";
-// import AuthContextProvider from "@/contexts/AuthContext";
+import AddToCartButton from "@/app/components/AddToCartButton";
+import FavoriteButton from "@/app/components/FavoriteButton";
+import MyRating from "@/app/components/MyRating";
+import AuthContextProvider from "@/contexts/AuthContext";
 import { getBrand } from "@/lib/firestore/brands/read_server";
 import { getCategory } from "@/lib/firestore/categories/read_server";
-// import { getProductReviewCounts } from "@/lib/firestore/products/count/read";
-import { Button } from "@nextui-org/react";
+import { getProductReviewCounts } from "@/lib/firestore/products/count/read";
 import Link from "next/link";
 import { Suspense } from "react";
 
@@ -35,12 +34,12 @@ export default function Details({ product }) {
             Buy Now
           </button>
         </Link>
- 
-          <Button type={"cute"} productId={product?.id} />
-      
-      
-          <Button productId={product?.id} />
-       
+        <AuthContextProvider>
+          <AddToCartButton type={"cute"} productId={product?.id} />
+        </AuthContextProvider>
+        <AuthContextProvider>
+          <FavoriteButton productId={product?.id} />
+        </AuthContextProvider>
       </div>
       {product?.stock <= (product?.orders ?? 0) && (
         <div className="flex">
@@ -82,14 +81,14 @@ async function Brand({ brandId }) {
 }
 
 async function RatingReview({ product }) {
-//   const counts = await getProductReviewCounts({ productId: product?.id });
+  const counts = await getProductReviewCounts({ productId: product?.id });
   return (
     <div className="flex gap-3 items-center">
-      {/* <MyRating value={counts?.averageRating ?? 0} /> */}
+      <MyRating value={counts?.averageRating ?? 0} />
       <h1 className="text-sm text-gray-400">
-        {/* <span>{counts?.averageRating?.toFixed(1)}</span> ({counts?.totalReviews}   )*/}
-     
+        <span>{counts?.averageRating?.toFixed(1)}</span> ({counts?.totalReviews}
+        )
       </h1>
     </div>
   );
-} 
+}

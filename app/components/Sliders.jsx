@@ -23,7 +23,7 @@ export default function FeaturedProductSlider({featuredProducts}){
           return (
           <div>
               <div className=" flex flex-col-reverse justify-center  overflow-hidden md:flex-row gap-4 bg-[#f8f8f8] p-5 md:px-36 md:py-20 w-full">
-              <div className="mt-15 flex-1 flex flex-col md:gap-10 md:px-36 gap-2">
+              <div className="mt-15 flex-1 flex flex-col md:gap-8 md:px-36 gap-2">
                 <h2 className="text-gray-500 text-xs md:text-base">NEW FASHION</h2>
                 <div className="flex flex-col gap-4">
                 <Link href={`/products/${product?.id}`}>
@@ -48,11 +48,11 @@ export default function FeaturedProductSlider({featuredProducts}){
 
                   </div>
               </div>
-          <div className="mt-50 flex flex-col justify-center">
+          <div className="mt-10 flex flex-col justify-center">
           <Link href={`/products/${product?.id}`}>
               
               <img 
-              className=" h-[40rem] md:h-[25rem] object-contain"
+              className=" h-[rem] md:h-[25rem] object-contain"
               src={product?.featureImageURL} alt=""/>
               </Link>
           </div>

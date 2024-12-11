@@ -61,7 +61,7 @@ export default function Categories({ categories }) {
               <div className="px-2">
                 <div className="flex flex-col gap-2 items-center justify-center">
                   <div className="md:h-32 md:w-32 h-24 w-24 rounded-full md:p-5 p-2 border overflow-hidden">
-                    <img src={category?.imageURL} alt="" />
+                    <img src={category?.imageURL} alt="" className="object-contain justify-center" />
                   </div>
                   <h1 className="font-semibold">{category?.name}</h1>
                 </div>

@@ -45,7 +45,10 @@ export default function Collections({collections}){
       }
 
       return (
-        <div className="overflow-hidden md:p10 p-5"> 
+        <div className="overflow-hidden md:p-10 p-5"> 
+          <div className="flex justify-center w-full mb-7">
+        <h1 className="text-lg font-semibold">Shop By Collection</h1>
+      </div>
             <Slider {...settings}>
 
         {(collections?.length <= 3 
