@@ -3,6 +3,7 @@ import Link from "next/link"
 import LogoutButton from "../admin/components/LogOutButton"
 import AuthContextProvider from "@/contexts/AuthContext"
 import HeaderClientButtons from "./HeaderClientButtons"
+import AdminButton from "./AdminButton"
 
 export default function Header(){
     const menuList=[
@@ -34,6 +35,10 @@ return <nav className="sticky top-0 z-50 bg-white bg-opacity-65 backdrop-blur-2x
     })}
     </div>
     <div className="flex items-center gap-1">
+      <AuthContextProvider>
+    <AdminButton/>
+    </AuthContextProvider> 
+
      <Link href={`/search`}>
           <button
             title="Search Products"
