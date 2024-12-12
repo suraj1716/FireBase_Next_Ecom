@@ -90,7 +90,7 @@ const handleUpdate=()=>{
 <td className="border-y bg-white px-3 py-2 border-l rounded-l-lg text-center">{index+1}</td>
 <td className="border-y bg-white px-3 py-2">
     <div className="flex justify-center">
-        <img className="h-10 w-10 object-cover" src={item?.imageURL} alt=""/>
+        <img className="h-10 w-10 object-contain" src={item?.imageURL} alt=""/>
     </div></td>
 <td className="border-y bg-white px-3 py-2 ">{item.name}</td>
 <td className="border-y bg-white px-3 py-2  border-r rounded-r-lg">

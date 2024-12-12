@@ -109,7 +109,7 @@ function Tab({ item }) {
   return (
     <Link href={item?.link}>
       <li
-        className={`flex items-center gap-2 px-4 py-2 rounded-xl font-semibold ease-soft-spring transition-all duration-300
+        className={`flex items-center gap-2 px-4 py-2 rounded-xl font-sans ease-soft-spring transition-all duration-300
           ${isSelected ? "bg-[#879fff] text-white" : "bg-white text-black"} 
           `}
       >

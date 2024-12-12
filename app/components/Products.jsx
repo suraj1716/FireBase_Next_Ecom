@@ -24,10 +24,10 @@ export default function ProductsGridView({ products }) {
 export function ProductCard({ product }) {
   return (
     <div className="flex flex-col gap-3 border p-4 rounded-lg">
-      <div className="relative w-full ">
+      <div className="relative w-full h-48 ">
         <img
           src={product?.featureImageURL}
-          className="rounded-lg h-46 w-full object-contain mb-4"
+          className="rounded-lg h-full w-full object-contain "
           alt={product?.title}
         />
         <div className="absolute top-0 right-0">
